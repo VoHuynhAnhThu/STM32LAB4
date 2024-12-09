@@ -1,0 +1,20 @@
+10:05:49 **** Incremental Build of configuration Debug for project VXL_LAB04 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/sched.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sched.d" -MT"Core/Src/sched.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sched.o"
+arm-none-eabi-gcc -o "VXL_LAB04.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Giao_trinh_dai_hoc\VXL_LAB04\VXL_LAB04\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VXL_LAB04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: VXL_LAB04.elf
+ 
+arm-none-eabi-size   VXL_LAB04.elf 
+arm-none-eabi-objdump -h -S  VXL_LAB04.elf  > "VXL_LAB04.list"
+arm-none-eabi-objcopy  -O ihex  VXL_LAB04.elf  "VXL_LAB04.hex"
+arm-none-eabi-objcopy  -O binary  VXL_LAB04.elf  "VXL_LAB04.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7636	     28	   3252	  10916	   2aa4	VXL_LAB04.elf
+Finished building: default.size.stdout
+ 
+Finished building: VXL_LAB04.hex
+Finished building: VXL_LAB04.bin
+ 
+ 
+Finished building: VXL_LAB04.list
+ 
